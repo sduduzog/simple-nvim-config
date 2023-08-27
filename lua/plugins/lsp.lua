@@ -20,6 +20,8 @@ return {
         name = 'recommended'
       })
 
+      local cmp = require('cmp')
+
       local lspconfig = require('lspconfig')
 
       lsp.ensure_installed({
@@ -51,6 +53,16 @@ return {
       lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 
       lsp.setup()
+
+      cmp.setup({
+        mapping = {
+          ['<CR>'] = cmp.mapping.confirm({ select = false }),
+        },
+        preselect = 'item',
+        completion = {
+          completeopt = 'menu, menuone, noinsert'
+        }
+      })
     end
   }
 
