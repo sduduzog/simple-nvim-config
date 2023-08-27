@@ -11,7 +11,6 @@ return {
     end,
   },
   { 'jiangmiao/auto-pairs' },
-  { 'akinsho/toggleterm.nvim', version = '*', config = true },
   {
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
@@ -36,26 +35,4 @@ return {
     end
   },
 
-  {
-    'nvim-telescope/telescope.nvim',
-    branch = '0.1.x',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        build = 'make',
-        cond = function()
-          return vim.fn.executable 'make' == 1
-        end,
-      },
-    },
-    config = function()
-      vim.keymap.set('n', '<leader>ss', function()
-        require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-          winblend = 10,
-          previewer = false
-        })
-      end)
-    end
-  },
 }
