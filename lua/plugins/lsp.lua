@@ -27,6 +27,7 @@ return {
       lsp.ensure_installed({
         'lua_ls',
         'eslint',
+        'graphql',
         'volar',
         'tailwindcss'
       })
@@ -42,6 +43,20 @@ return {
         hint = '⚑',
         info = '»'
       })
+
+      vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
+        vim.lsp.diagnostic.on_publish_diagnostics, {
+          --virtual_text = false,
+          virtual_text = {
+            prefix = '●',
+            spacing = 4,
+            severity_limit = 'Warning',
+          },
+          underline = true,
+          signs = true,
+          update_in_insert = true,
+        }
+      )
 
       lspconfig.volar.setup({
         filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
@@ -69,6 +84,8 @@ return {
         end,
       })
 
+      lspconfig.graphql.setup {}
+
       lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 
       lsp.setup()
@@ -84,5 +101,4 @@ return {
       })
     end
   }
-
 }
