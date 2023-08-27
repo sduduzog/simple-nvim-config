@@ -13,6 +13,7 @@ return {
       },
     },
     config = function()
+      pcall(require('telescope').load_extension, 'fzf')
       vim.keymap.set('n', '<leader>ss', function()
         require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
           winblend = 10,

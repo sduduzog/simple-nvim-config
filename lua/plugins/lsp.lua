@@ -36,6 +36,13 @@ return {
         lsp.buffer_autoformat()
       end)
 
+      lsp.set_sign_icons({
+        error = '✘',
+        warn = '▲',
+        hint = '⚑',
+        info = '»'
+      })
+
       lspconfig.volar.setup({
         filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
         settings = {

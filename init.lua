@@ -13,6 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = ' '
 
+vim.opt.guifont = { 'JetbrainsMono Nerd Font', ':h15' }
+
 local opt = vim.opt
 
 vim.cmd [[
@@ -59,8 +61,8 @@ opt.showmode = false
 vim.opt.pumheight = 10
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-vim.keymap.set('n', '<leader>bn', ':bn<CR>', { desc = 'Next buffer' })
-vim.keymap.set('n', '<leader>bp', ':bp<CR>', { desc = 'Prev buffer' })
+vim.keymap.set('n', '<leader><Tab>', ':bn<CR>', { desc = 'Next buffer' })
+vim.keymap.set('n', '<leader><S-Tab>', ':bp<CR>', { desc = 'Prev buffer' })
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'Delete buffer' })
 
 require('lazy').setup('plugins');

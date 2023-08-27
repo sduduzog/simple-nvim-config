@@ -12,27 +12,8 @@ return {
   },
   { 'jiangmiao/auto-pairs' },
   {
-    'nvim-treesitter/nvim-treesitter',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
-      'JoosepAlviste/nvim-ts-context-commentstring',
-    },
-    build = ':TSUpdate',
-    config = function()
-      require('nvim-treesitter.configs').setup {
-        ensure_installed = {
-          'lua',
-          'typescript',
-          'vue'
-        },
-        hightlight = {
-          enable = true
-        },
-        context_commentstring = {
-          enable = true
-        }
-      }
-    end
+    'f-person/git-blame.nvim',
+    event = 'VeryLazy',
   },
-
+  { 'nvim-tree/nvim-web-devicons' },
 }
