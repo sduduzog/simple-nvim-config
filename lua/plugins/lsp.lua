@@ -26,7 +26,6 @@ return {
 
       lsp.ensure_installed({
         'lua_ls',
-        'cssls',
         'eslint',
         'volar',
         'tailwindcss'
@@ -39,6 +38,19 @@ return {
 
       lspconfig.volar.setup({
         filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+        settings = {
+          css = {
+            lint = {
+              unknownAtRules = 'ignore'
+            }
+          },
+
+          scss = {
+            lint = {
+              unknownAtRules = 'ignore'
+            }
+          }
+        }
       })
 
       lspconfig.eslint.setup({
