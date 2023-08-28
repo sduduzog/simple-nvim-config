@@ -65,3 +65,5 @@ vim.keymap.set('n', '<leader><S-Tab>', ':bp<CR>', { desc = 'Prev buffer' })
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'Delete buffer' })
 
 require('lazy').setup('plugins');
+
+vim.cmd.colorscheme 'catppuccin-frappe'
