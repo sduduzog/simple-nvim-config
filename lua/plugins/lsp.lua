@@ -28,7 +28,7 @@ return {
         'lua_ls',
         'eslint',
         'graphql',
-        'golangci_lint_ls',
+        'gopls',
         'volar',
         'tailwindcss'
       })
@@ -47,7 +47,6 @@ return {
 
       vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
         vim.lsp.diagnostic.on_publish_diagnostics, {
-          --virtual_text = false,
           virtual_text = {
             prefix = '●',
             spacing = 4,
@@ -76,6 +75,8 @@ return {
         }
       })
 
+      lspconfig.graphql.setup {}
+
       lspconfig.eslint.setup({
         on_attach = function(client, bufnr)
           vim.api.nvim_create_autocmd('BufWritePre', {
@@ -84,8 +85,6 @@ return {
           })
         end,
       })
-
-      lspconfig.graphql.setup {}
 
       lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 
