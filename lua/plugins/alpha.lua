@@ -17,6 +17,7 @@ return {
         theta.button('c', '  Configuration', '<cmd>tabnew $MYVIMRC <bar> tcd %:h<cr>'),
         theta.button('u', '  Update plugins', '<cmd>Lazy sync<CR>'),
         theta.button('q', '󰅚  Quit', '<cmd>qa<CR>'),
+        theta.button('<S-F6>', ' Toggle Transparent Background', '<cmd>TransparentToggle<CR>')
       }
       require 'alpha'.setup(theta.opts)
     end
