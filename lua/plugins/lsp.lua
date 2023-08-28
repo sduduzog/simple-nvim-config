@@ -28,6 +28,7 @@ return {
         'lua_ls',
         'eslint',
         'graphql',
+        'golangci_lint_ls',
         'volar',
         'tailwindcss'
       })
