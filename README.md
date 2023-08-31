@@ -1,6 +1,23 @@
 # simple-nvim-config
 It doesn't need to be that complicated honestly.
 
+## Extend configuration
+Create a file:
+- `lua/options.lua` or
+- `lua/options/init.lua`
+
+This will be automatically picked up after restarting nvim
+
+## Add more plugins
+Create any .lua file in `lua/plugins/` with the structue:
+```lua
+return {
+    -- your plugins here
+    { "someplugin" }, 
+}
+
+```
+
 ## Instalation
 ### Not Windows
 - Fork this repo (optional)
